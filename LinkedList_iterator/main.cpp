@@ -46,7 +46,6 @@ int main()
 	}
 	cout << endl;
 
-
 #if 0
 	list<int> ls;
 	for (int i = 0; i < 20; i++)

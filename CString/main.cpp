@@ -64,7 +64,7 @@ int main()
 	std::cout << "str1：" << str1.GetString() << " strlength：" << str1.GetStringLength() << std::endl;
 
 	std::cout << "替换后缓冲区内的数据为：" << std::endl;
-	str1.Replace(nStrLength, StrTemp);			//nStrLength超过缓冲区存储的字符串字节长度，替换失败
+	str1.Replace(nStrLength, StrTemp); //nStrLength超过缓冲区存储的字符串字节长度，替换失败
 	std::cout << "str1：" << str1.GetString() << " strlength：" << str1.GetStringLength() << std::endl;
 #endif // 0 测试替换 指定长度的字符串到原来的缓冲区去
 
@@ -74,9 +74,9 @@ int main()
 	std::cout << "提取前缓冲区内的数据为：" << std::endl;
 	std::cout << "str1：" << str1.GetString() << " strlength：" << str1.GetStringLength() << std::endl;
 	int nMiddle = str1.GetStringLength() / 2;
-	str1.Mid(nMiddle, 2);	//从缓冲区中存储的字符串中间开始查找
-	str1.Left(5);		//从缓冲区中存储的字符串最左侧开始查找
-	str1.Right(5);		//从缓冲区中存储的字符串最右侧开始查找
+	str1.Mid(nMiddle, 2); //从缓冲区中存储的字符串中间开始查找
+	str1.Left(5); //从缓冲区中存储的字符串最左侧开始查找
+	str1.Right(5); //从缓冲区中存储的字符串最右侧开始查找
 	std::cout << "提取后缓冲区内的数据为：" << std::endl;
 	std::cout << "str1：" << str1.GetString() << " strlength：" << str1.GetStringLength() << std::endl;
 #endif // 0 测试缓冲区内的字符串提取功能

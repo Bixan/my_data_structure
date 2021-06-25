@@ -7,16 +7,11 @@
 
 
 /*=======================================================
-*   CArrary<T>::CArrary() -- 无参构造，初始化数据
-*
+*   函数作用：无参构造，初始化数据
 *   参数：无
-*
 *   返回值：无
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 CArrary<T>::CArrary()
@@ -28,16 +23,11 @@ CArrary<T>::CArrary()
 
 
 /*=======================================================
-*   CArrary<T>::CArrary(const CArrary& ary) -- 拷贝构造
-*
+*   函数作用：拷贝构造
 *   参数：const CArrary& ary -- 已初始化类对象
-*
 *   返回值：无
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 CArrary<T>::CArrary(const CArrary& ary)
@@ -47,16 +37,11 @@ CArrary<T>::CArrary(const CArrary& ary)
 
 
 /*=======================================================
-*   CArrary<T>::~CArrary() -- 析构，类对象声明周结束，自动调用该函数进行数据释放
-*
+*   函数作用：析构，类对象声明周结束，自动调用该函数进行数据释放
 *   参数：无
-*
 *   返回值：无
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 CArrary<T>::~CArrary()
@@ -66,16 +51,11 @@ CArrary<T>::~CArrary()
 
 
 /*=======================================================
-*   bool CArrary<T>::AddHead(T val) -- 调用 Insert() 方法在动态数据头部添加数据
-*
+*   函数作用：调用 Insert() 方法在动态数据头部添加数据
 *   参数：val -- 添加的数据
-*
 *   返回值：调用Insert()方法 -- 添加成功返回 true，添加失败返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::AddHead(T val)
@@ -85,16 +65,11 @@ bool CArrary<T>::AddHead(T val)
 
 
 /*=======================================================
-*   bool CArrary<T>::AddTail(T val) -- 调用 Insert() 方法在动态数据尾部添加数据
-*
+*   函数作用：调用 Insert() 方法在动态数据尾部添加数据
 *   参数：val -- 添加的数据
-*
 *   返回值：调用Insert()方法 -- 添加成功返回 true，添加失败返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::AddTail(T val)
@@ -104,16 +79,11 @@ bool CArrary<T>::AddTail(T val)
 
 
 /*=======================================================
-*   bool CArrary<T>::Insert(int nIdx, T val) -- 在动态数组内的指定位置添加指定的数据
-*
+*   函数作用：在动态数组内的指定位置添加指定的数据
 *   参数：val -- 添加的数据
-*
 *   返回值：无
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::Insert(int nIdx, T val)
@@ -148,24 +118,19 @@ bool CArrary<T>::Insert(int nIdx, T val)
 	//添加新的元素
 	//从nIdx开始的元素都向后移动
 	memcpy(&m_pBuff[nIdx + 1], &m_pBuff[nIdx], (m_nElementSize - nIdx) * sizeof(T));
-	m_pBuff[nIdx] = val;	// 插入新值
-	m_nElementSize++;   // 元素个数加1
+	m_pBuff[nIdx] = val; // 插入新值
+	m_nElementSize++; // 元素个数加1
 
 	return true;
 }
 
 
 /*=======================================================
-*   bool CArrary<T>::RemoveHead() -- 删除头结点
-*
+*   函数作用：删除头结点
 *   参数：无
-*
 *   返回值：调用Remove()方法，删除成功 返回true，删除失败 返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::RemoveHead()
@@ -175,16 +140,11 @@ bool CArrary<T>::RemoveHead()
 
 
 /*=======================================================
-*   bool CArrary<T>::RemoveTail() -- 删除尾结点
-*
+*   函数作用：删除尾结点
 *   参数：无
-*
 *   返回值：调用Remove()方法，删除成功 返回true，删除失败 返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::RemoveTail()
@@ -194,16 +154,11 @@ bool CArrary<T>::RemoveTail()
 
 
 /*=======================================================
-*   bool CArrary<T>::Remove() -- 根据输入的索引值，删除指定索引上的数据
-*
+*   函数作用：根据输入的索引值，删除指定索引上的数据
 *   参数：int nIdx  -- 要删除元素的索引值
-*
 *   返回值：调用Remove()方法，删除成功 返回true，删除失败 返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::Remove(int nIdx)
@@ -230,16 +185,11 @@ bool CArrary<T>::Remove(int nIdx)
 
 
 /*=======================================================
-*   bool CArrary<T>::SetVal(int nIdx, T val) -- 根据输入的索引值，删除指定索引上的数据
-*
+*   函数作用：根据输入的索引值，删除指定索引上的数据
 *   参数：int nIdx  -- 要修改元素的索引，val -- 修改后的数据
-*
 *   返回值：修改成功 返回true，修改失败 返回false
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 bool CArrary<T>::SetVal(int nIdx, T val)
@@ -256,16 +206,11 @@ bool CArrary<T>::SetVal(int nIdx, T val)
 
 
 /*=======================================================
-*   T& CArrary<T>::operator[](int nIdx) -- 重载运算符[]
-*
+*   函数作用：重载运算符[]
 *   参数：int nIdx  -- 要访问动态数组的下标
-*
 *   返回值：下标越界，抛出异常，没有越界，返回索引上对应的数值
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 T& CArrary<T>::operator[](int nIdx)
@@ -280,16 +225,13 @@ T& CArrary<T>::operator[](int nIdx)
 
 
 /*=======================================================
-*   CArrary<T>& CArrary<T>::operator+=(const CArrary& ary) -- 重载运算符 +=
-*
+*   函数作用：重载运算符 +=
 *   参数：const CArrary& ary -- 已初始化的类对象 ary
-*
-*   返回值：拼接失败，返回 *this -- 返回被拼接方的数据，拼接成功，返回拼接后的 *this
-*
+*   返回值：
+*		拼接失败，返回 *this -- 返回被拼接方的数据，
+*		拼接成功，返回拼接后的 *this
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 CArrary<T>& CArrary<T>::operator+=(const CArrary& ary)
@@ -323,16 +265,12 @@ CArrary<T>& CArrary<T>::operator+=(const CArrary& ary)
 
 
 /*=======================================================
-*   CArrary<T>& CArrary<T>::operator+=(const CArrary& ary) -- 重载运算符 =
-*
+*   函数作用：重载运算符 =
 *   参数：const CArrary& ary -- 已初始化的类对象 ary
-*
 *   返回值：= 号两侧为同一个类对象的时候，赋值失败，返回 *this（被赋值的类对象地址）
-*				赋值成功，返回赋值后的类对象 *this
+*		赋值成功，返回赋值后的类对象 *this
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 CArrary<T>& CArrary<T>::operator=(const CArrary& ary)
@@ -359,16 +297,11 @@ CArrary<T>& CArrary<T>::operator=(const CArrary& ary)
 
 
 /*=======================================================
-*   int CArrary<T>::Find(T val) -- 在动态数组内查询指定的数据值 val
-*
+*   函数作用：在动态数组内查询指定的数据值 val
 *   参数：val -- 查询的指定数据 ary
-*
 *   返回值：查询成功返回索引
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 int CArrary<T>::Find(T val)
@@ -386,7 +319,7 @@ int CArrary<T>::Find(T val)
 		*/
 		if (m_pBuff[nInx] == val)
 		{
-			return nInx;   // 找到返回索引
+			return nInx; // 找到返回索引
 			//return m_pBuff[nInx];
 		}
 	}
@@ -395,16 +328,11 @@ int CArrary<T>::Find(T val)
 
 
 /*=======================================================
-*   int CArrary<T>::ElementCount() const -- 获取元素个数
-*
+*	函数作用：获取元素个数
 *   参数：无
-*
 *   返回值：返回动态数组内的有效元素数量
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 int CArrary<T>::ElementCount() const
@@ -414,16 +342,11 @@ int CArrary<T>::ElementCount() const
 
 
 /*=======================================================
-*   void CArrary<T>::Clear() -- 清除动态数组的数据
-*
+*   函数作用：清除动态数组的数据
 *   参数：无
-*
 *   返回值：无
-*
 *   警告：无
-*
 *   更新：2020/06/08
-*
 ========================================================*/
 template<typename T>
 void CArrary<T>::Clear()

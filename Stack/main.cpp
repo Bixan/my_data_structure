@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 	CStack<int> stack;
-
 	for (int i = 1; i <= 20; i++)
 	{
 		stack.push(i);

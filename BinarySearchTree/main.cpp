@@ -42,7 +42,6 @@ int main()
 	bst.LRMUseLoop();
 	cout << endl;
 
-
 	cout << "层序遍历：";
 	bst.Level();
 	cout << endl;
@@ -150,7 +149,7 @@ int main()
 #if 1
 	CBinarySearchTree<int> bstTest1;
 	bstTest1.Insert(56);
-	bstTest1.Remove(56);	 // bug 出发点
+	bstTest1.Remove(56); // bug 出发点
 	bstTest1.Insert(40);
 	cout << endl;
 #endif // 测试只有根节点时，删除根结点
@@ -164,7 +163,6 @@ int main()
 	bstTest2.Remove(56);
 	bstTest2.Insert(69);
 	cout << endl;
-
 
 	//有bug，已改
 	CBinarySearchTree<int> bstTest3;

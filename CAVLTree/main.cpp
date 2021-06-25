@@ -91,8 +91,6 @@ int main()
     cout << "当前节点数量为：" << avl.GetNodeSize() << endl;
 
     avl.Find(2);
-
     avl.LMR();
-
     return 0;
 }

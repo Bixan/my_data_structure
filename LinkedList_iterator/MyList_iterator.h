@@ -10,9 +10,9 @@ private:
 	{
 		tagNode(T val) : m_val(val), m_pPre(nullptr), m_pNext(nullptr) {}
 		tagNode() : m_pPre(nullptr), m_pNext(nullptr) {}
-		T m_val;	// 保存的数据
-		tagNode* m_pPre;		// 指向上一个结点的指针，前驱
-		tagNode* m_pNext;	// 指向下一个结点的指针，后继
+		T m_val; // 保存的数据
+		tagNode* m_pPre; // 指向上一个结点的指针，前驱
+		tagNode* m_pNext; // 指向下一个结点的指针，后继
 	}NODE, * PNODE;
 
 public:
@@ -92,7 +92,7 @@ public:
 	private:
 		PNODE m_pNode;
 		PNODE m_pHeadGuard;	// 头部哨兵
-		PNODE m_pTailGuard;		// 尾部哨兵
+		PNODE m_pTailGuard; // 尾部哨兵
 	};
 
 public:
@@ -109,8 +109,8 @@ public:
 	编译器会自动生成拷贝构造以及重载运算符=
 	默认生成为浅拷贝，在这里会有问题
 	*/
-	CList(const CList& list);		// 拷贝构造
-	CList& operator=(const CList& list);	// 重载运算符 =
+	CList(const CList& list); // 拷贝构造
+	CList& operator=(const CList& list); // 重载运算符 '='
 	virtual ~CList();
 
 public:
@@ -126,10 +126,10 @@ public:
 	// 删除
 	bool RemoveHead();
 	bool RemoveTail();
-	bool Remove(iterator pNode);	// 传递了结点的指针，破坏了类的封装性
+	bool Remove(iterator pNode); // 传递了结点的指针，破坏了类的封装性
 
 	// 查询
-	iterator Find(T val);	// 返回值为一个结点的指针 
+	iterator Find(T val); // 返回值为一个结点的指针 
 
 	// 判断该链表是否是一个空链表
 	bool IsNull();
@@ -144,8 +144,8 @@ private:
 	void InitList();
 private:
 	PNODE m_pHeadGuard;	// 保存链表的头部哨兵
-	PNODE m_pTailGuard;		// 保存链表的尾部哨兵
-	int m_nNodeSize;		// 链表中结点的个数
+	PNODE m_pTailGuard; // 保存链表的尾部哨兵
+	int m_nNodeSize; // 链表中结点的个数
 };
 
 template<typename T>
@@ -212,7 +212,7 @@ CList<T>& CList<T>::operator=(const CList& list)
 	PNODE pNode = list.m_pHeadGuard->m_pNext;
 	while (pNode != list.m_pTailGuard)
 	{
-		AddTail(pNode->m_val);	// 将对方的数据添加到自己的链表中
+		AddTail(pNode->m_val); // 将对方的数据添加到自己的链表中
 
 		pNode = pNode->m_pNext;	// 指向下一个结点
 	}
@@ -264,7 +264,7 @@ bool CList<T>::Insert(iterator itr, T val)
 	PNODE pNewNode = new NODE(val);
 
 	// 插入新的结点
-	PNODE pOldPre = itr.m_pNode->m_pPre;	// 保存插入结点的前一个结点
+	PNODE pOldPre = itr.m_pNode->m_pPre; // 保存插入结点的前一个结点
 
 	// 新结点的下一个结点指向pNode结点
 	pNewNode->m_pNext = itr.m_pNode;
@@ -314,11 +314,11 @@ bool CList<T>::Remove(iterator itr)
 	PNODE pOldPre = itr.m_pNode->m_pPre;
 	PNODE pOldNext = itr.m_pNode->m_pNext;
 
-	pOldPre->m_pNext = pOldNext;	// 该结点前驱结点的后继结点 指向 该结点的后继结点
+	pOldPre->m_pNext = pOldNext; // 该结点前驱结点的后继结点 指向 该结点的后继结点
 	pOldNext->m_pPre = pOldPre;	// 该结点后继结点的前驱结点 指向 该结点的前驱结点
 
 	delete itr.m_pNode;	// 删除该结点
-	m_nNodeSize--;		// 结点个数减1
+	m_nNodeSize--; // 结点个数减1
 
 	return true;
 }

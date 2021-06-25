@@ -5,7 +5,7 @@ template<typename T>
 class CQueue
 {
 public:
-	// 约定： 链表的头节点为队列头，链表的尾结点为队列尾
+	// 约定：链表的头节点为队列头，链表的尾结点为队列尾
 
 	// 入队
 	void push(const T& val);
@@ -31,13 +31,13 @@ private:
 template<typename T>
 inline void CQueue<T>::push(const T& val)
 {
-	m_list.AddTail(val);	// 入队时从队尾进入
+	m_list.AddTail(val); // 入队时从队尾进入
 }
 
 template<typename T>
 inline void CQueue<T>::pop()
 {
-	m_list.RemoveHead();	// 出队时，从队头出队
+	m_list.RemoveHead(); // 出队时，从队头出队
 }
 
 template<typename T>

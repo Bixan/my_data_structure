@@ -12,14 +12,21 @@ int main()
 		queue.push(i);
 	}
 
-	cout << "当前队列中的有数据元素：" << queue.QueueElementSize() << " 个" << endl;
+	cout << "当前队列中的有数据元素：" 
+		<< queue.QueueElementSize() 
+		<< " 个" 
+		<< endl;
 
 	while (!queue.empty())
 	{
-		cout << queue.front() << " ";
+		cout << queue.front() 
+			<< " ";
 		queue.pop();
 	}
 	cout << endl;
-	cout << "当前队列中的有数据元素：" << queue.QueueElementSize() << " 个" << endl;
+	cout << "当前队列中的有数据元素：" 
+		<< queue.QueueElementSize() 
+		<< " 个" 
+		<< endl;
 	return 0;
 }
